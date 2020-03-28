@@ -1,5 +1,7 @@
 FROM centos:centos7
 
+COPY etc_cvmfs /etc/cvmfs
+
 RUN \
 mkdir -p /cvmfs /etc/cvmfs /var/lib/cvmfs && \
 yum -y update && \
