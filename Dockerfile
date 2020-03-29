@@ -1,7 +1,5 @@
 FROM centos:centos7
 
-COPY etc_cvmfs /etc/cvmfs
-
 RUN \
 mkdir -p /cvmfs /etc/cvmfs /var/lib/cvmfs && \
 yum -y update && \
@@ -13,6 +11,8 @@ http://repository.egi.eu/sw/production/umd/4/centos7/x86_64/updates/umd-release-
 yum install -y HEP_OSlibs cvmfs cvmfs-fuse3 cvmfs-config-none --disablerepo=UMD* && \
 yum install -y cvmfs-x509-helper --enablerepo=UMD* && \
 yum clean all && rm -rf /var/cache/yum
+
+COPY etc_cvmfs /etc/cvmfs
 
 SHELL ["/usr/bin/bash", "-c"]
 CMD ["/usr/bin/bash"]
