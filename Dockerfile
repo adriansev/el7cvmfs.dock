@@ -10,7 +10,7 @@ https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm \
 https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
 https://linuxsoft.cern.ch/wlcg/centos7/x86_64/wlcg-repo-1.0.0-1.el7.noarch.rpm \
 http://repository.egi.eu/sw/production/umd/4/centos7/x86_64/updates/umd-release-4.1.3-1.el7.centos.noarch.rpm && \
-yum install -y HEP_OSlibs cvmfs cvmfs-fuse3 --disablerepo=UMD* && \
+yum install -y HEP_OSlibs cvmfs cvmfs-fuse3 cvmfs-config-none --disablerepo=UMD* && \
 yum install -y cvmfs-x509-helper --enablerepo=UMD* && \
 yum clean all && rm -rf /var/cache/yum
 
