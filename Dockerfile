@@ -2,6 +2,7 @@ FROM centos:centos7
 
 RUN \
 mkdir -p /cvmfs /etc/cvmfs /var/lib/cvmfs && \
+yum fs filter languages en && yum fs filter documentation && \
 yum -y update && \
 yum -y install bash gawk bash-completion util-linux coreutils sudo curl fuse fuse-libs fuse3 fuse3-libs bindfs \
 https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm \
