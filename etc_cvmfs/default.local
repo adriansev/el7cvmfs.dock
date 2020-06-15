@@ -8,6 +8,7 @@ CVMFS_QUOTA_LIMIT='-1'
 CVMFS_SHARED_CACHE='no'
 CVMFS_ALIEN_CACHE="/var/lib/cvmfs"
 
+CVMFS_FOLLOW_REDIRECTS='yes'
 CVMFS_HTTP_PROXY='auto;DIRECT'
 CVMFS_PAC_URLS="http://grid-wpad/wpad.dat;http://cernvm-wpad.cern.ch/wpad.dat;http://cernvm-wpad.fnal.gov/wpad.dat"
 
