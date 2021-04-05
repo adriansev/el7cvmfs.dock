@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+extract_rpm () { rpm2cpio ${1} | cpio -idmv ; }
+
+extract_rpm cvmfs-config-osg-*.rpm
+extract_rpm cvmfs-config-egi-*.rpm
+extract_rpm cvmfs-config-default-*.rpm
+
