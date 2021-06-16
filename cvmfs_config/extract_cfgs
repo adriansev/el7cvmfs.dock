@@ -2,7 +2,21 @@
 
 extract_rpm () { rpm2cpio ${1} | cpio -idmv ; }
 
+latest_cfg_rpm () {
+rpm_cfg=$(curl -s "${1}" --list-only | grep -Po 'href="\K.*?(?=")' | grep cvmfs-config | sort | tail -1) #'
+echo "${1}/${rpm_cfg}"
+}
+
+rm -rf *.rpm
+rm -rf etc
+curl -O $(latest_cfg_rpm https://repo.opensciencegrid.org/osg/3.5/el7/release/x86_64/)
+curl -O $(latest_cfg_rpm http://repository.egi.eu/sw/production/umd/4/centos7/x86_64/updates/)
+curl -O $(latest_cfg_rpm https://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/EL/7/x86_64/)
+
 extract_rpm cvmfs-config-osg-*.rpm
 extract_rpm cvmfs-config-egi-*.rpm
 extract_rpm cvmfs-config-default-*.rpm
+rm -rf *.rpm
 
+rsync --delete -aW etc/cvmfs/{config.d,default.d,domain.d,keys} ../etc_cvmfs/
+rm -rf etc
