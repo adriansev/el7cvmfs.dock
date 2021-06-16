@@ -11,7 +11,7 @@ yum -y install \
 bash-completion bash-completion-extras util-linux coreutils sudo curl environment-modules \
 fuse fuse-libs fuse3 fuse3-libs bindfs  \
 git python unzip make autoconf automake texinfo libtool bison flex which gcc-gfortran gcc-c++ swig rsync \
-mariadb mariadb-devel curl curl-devel bzip2 bzip2-devel gettext gettext-devel freetype freetype-devel \
+mariadb mariadb-devel curl curl-devel bzip2 bzip2-devel gettext gettext-devel freetype freetype-devel readline readline-devel \
 libpng libpng-devel sqlite sqlite-devel ncurses ncurses-devel libxml2 libxml2-devel \
 motif motif-devel tk tk-devel glfw glfw-devel \
 mesa-libGLU-devel libX11-devel libXpm-devel libXext-devel libXft-devel \
