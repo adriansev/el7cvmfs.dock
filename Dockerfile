@@ -32,8 +32,7 @@ rm -rf /var/cache/yum/*
 
 COPY etc_cvmfs /etc/cvmfs/
 
-ENTRYPOINT [ "/usr/bin/bash", "-i", "-l" ]
-CMD ["-c"]
+CMD [ "/usr/bin/bash", "-l" ]
 
 LABEL maintainer="Adrian.Sevcenco@spacescience.ro"
 LABEL description="EL7 image to run HEP/CERN oriented software distributed through cvmfs"

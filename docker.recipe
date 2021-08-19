@@ -1,0 +1,6 @@
+docker login -u adriansevcenco
+sudo systemctl start docker
+docker build -t adriansevcenco/el7cvmfs .
+docker run -it adriansevcenco/el7cvmfs
+docker push adriansevcenco/el7cvmfs
+
