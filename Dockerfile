@@ -1,15 +1,21 @@
 FROM centos:centos7
 
+ADD http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo /etc/yum.repos.d/
+COPY alien-cas-master/alien-ca/ /etc/grid-security/certificates/
+COPY etc_cvmfs /etc/cvmfs/
+
 RUN \
 mkdir -p /cvmfs /etc/cvmfs /var/lib/cvmfs && \
 yum -y clean all && \
 yum fs filter languages en && yum fs filter documentation && \
+rpm --import http://repository.egi.eu/sw/production/cas/1/current/GPG-KEY-EUGridPMA-RPM-3 && \
 yum -y install \
 https://linuxsoft.cern.ch/wlcg/centos7/x86_64/wlcg-repo-1.0.0-1.el7.noarch.rpm \
 https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm \
 https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
 yum -y install centos-release-scl && \
 yum -y install \
+ca-policy-egi-core ca-policy-lcg openssl openssl-perl \
 bash-completion bash-completion-extras util-linux coreutils sudo curl environment-modules \
 fuse fuse-libs fuse3 fuse3-libs bindfs \
 scl-utils scl-utils-build \
@@ -23,14 +29,12 @@ java-11-openjdk java-11-openjdk-devel java-11-openjdk-headless \
 HEP_OSlibs && \
 yum install -y --disablerepo=UMD* cvmfs cvmfs-fuse3 cvmfs-config-none && \
 yum install -y https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm && \
-yum install -y git && \
-yum install -y hub git-subtree git-extras git-tools && \
+yum install -y git hub git-subtree git-extras git-tools && \
 yum-config-manager --save --disable endpoint && \
 yum -y update && \
 yum -y clean all && \
-rm -rf /var/cache/yum/*
-
-COPY etc_cvmfs /etc/cvmfs/
+rm -rf /var/cache/yum/* && \
+/usr/bin/c_rehash /etc/grid-security/certificates/
 
 CMD [ "/usr/bin/bash", "-l" ]
 
