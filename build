@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-./get_alien_ca
-
-docker build -t adriansevcenco/el7cvmfs:latest . && docker push adriansevcenco/el7cvmfs:latest
-
-docker build -t gitlab-registry.cern.ch/asevcenc/el7cvmfs.dock/el7cvmfs:latest . && docker push gitlab-registry.cern.ch/asevcenc/el7cvmfs.dock/el7cvmfs:latest
-

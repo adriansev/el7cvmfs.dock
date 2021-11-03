@@ -22,7 +22,7 @@ scl-utils scl-utils-build \
 python python-requests python-yaml python3 python3-libs python3-devel python3-pip python3-wheel python3-setuptools python3-rpm-macros python3-other-rpm-macros \
 pigz unzip make autoconf automake texinfo libtool bison flex which gcc-gfortran gcc-c++ swig rsync \
 mariadb mariadb-devel curl curl-devel bzip2 bzip2-devel gettext gettext-devel freetype freetype-devel readline readline-devel \
-libpng libpng-devel sqlite sqlite-devel ncurses ncurses-devel libxml2 libxml2-devel motif motif-devel tk tk-devel glfw glfw-devel \
+libpng libpng-devel sqlite sqlite-devel ncurses ncurses-devel libxml2 libxml2-devel motif motif-devel tk tk-devel glfw glfw-devel glew glew-devel\
 mesa-libGLU-devel libX11-devel libXpm-devel libXext-devel libXft-devel libXi-devel libXinerama-devel libXcursor-devel libXrandr-devel \
 rpm rpm-devel pciutils-devel perl-ExtUtils-Embed \
 java-11-openjdk java-11-openjdk-devel java-11-openjdk-headless \
