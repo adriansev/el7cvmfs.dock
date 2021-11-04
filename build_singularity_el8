@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+U=$(id -nu)
+G=$(id -ng)
+
+VER="8"
+NAME="el${VER}cvmfs.sif"
+SING_CONF="el${VER}cvmfs.sing"
+
+if [[ "${1}" == "sandbox" ]]; then
+    shift
+    DO_SANDBOX="--sandbox --fix-perms"
+    NAME="${NAME}_sandbox"
+fi
+[[ -e "${NAME}" ]] && rm -f "${NAME}"
+
+sudo -E singularity build ${DO_SANDBOX} "${NAME}" "${SING_CONF}"
+
+[[ -n "${DO_SANDBOX}" ]] && sudo chown -R ${U}:${G} "${NAME}"
+sudo chown -R ${U}:${G} "${SINGULARITY_CACHEDIR:-${HOME}/.singularity/cache}"
+
+oras login -u asevcenc -p "$(< ~/registry-cern.token)" registry.cern.ch
+oras push registry.cern.ch/asevcenc/$(basename ${NAME} .sif):latest ${NAME}:application/vnd.sylabs.sif.layer.v1.sif && echo "Done" || echo "Fail"
+
