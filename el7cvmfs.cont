@@ -20,7 +20,7 @@ bash-completion bash-completion-extras util-linux coreutils sudo curl environmen
 fuse fuse-libs fuse3 fuse3-libs bindfs \
 scl-utils scl-utils-build \
 python python-requests python-yaml python3 python3-libs python3-devel python3-pip python3-wheel python3-setuptools python3-rpm-macros python3-other-rpm-macros \
-pigz unzip make autoconf automake texinfo libtool bison flex which gcc-gfortran gcc-c++ swig rsync \
+pigz unzip make autoconf automake texinfo libtool bison flex which gcc-gfortran gcc-c++ swig rsync cmake extra-cmake-modules.noarch cmake3 cmake3-data.noarch \
 mariadb mariadb-devel curl curl-devel bzip2 bzip2-devel gettext gettext-devel freetype freetype-devel readline readline-devel \
 libpng libpng-devel sqlite sqlite-devel ncurses ncurses-devel libxml2 libxml2-devel motif motif-devel tk tk-devel glfw glfw-devel glew glew-devel\
 libX11-devel libXpm-devel libXext-devel libXft-devel libXi-devel libXinerama-devel libXcursor-devel libXrandr-devel \
