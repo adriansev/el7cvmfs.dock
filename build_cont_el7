@@ -7,3 +7,5 @@ podman login -u asevcenc -p "$(< ~/el7cvmfs_gitlab.token)" gitlab-registry.cern.
 podman build --no-cache --rm --format docker -t gitlab-registry.cern.ch/asevcenc/el7cvmfs.dock/el7cvmfs:latest -f el7cvmfs.cont .
 podman push gitlab-registry.cern.ch/asevcenc/el7cvmfs.dock/el7cvmfs:latest
 
+rm -rf master.zip alien-cas-master
+
