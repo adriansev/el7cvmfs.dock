@@ -1,4 +1,4 @@
-FROM centos:centos8
+FROM gitlab-registry.cern.ch/linuxsupport/cs8-base
 
 ADD http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo /etc/yum.repos.d/
 COPY alien-cas-master/alien-ca/ /etc/grid-security/certificates/
