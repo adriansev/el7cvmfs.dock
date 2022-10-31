@@ -40,7 +40,7 @@ rpm rpm-devel pciutils-devel perl-ExtUtils-Embed \
 java-11-openjdk java-11-openjdk-devel java-11-openjdk-headless \
 HEP_OSlibs && \
 yum install -y --disablerepo=UMD* cvmfs cvmfs-fuse3 cvmfs-config-none && \
-yum install -y https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.9-1.x86_64.rpm && \
+yum install -y https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm && \
 yum install -y git hub git-subtree git-extras git-tools && \
 yum-config-manager --save --disable endpoint && \
 yum -y update && \
